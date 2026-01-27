@@ -28,15 +28,11 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
         db = Firebase.firestore
 
-        // BOTÃO ENTRAR E SALVAR NO DB
+        // BOTÃO ENTRAR
         janela.btnEntrar.setOnClickListener {
             val email = janela.user.text.toString()
             val password = janela.pass.text.toString()
 
-            val userb = hashMapOf(
-                "email" to email,
-                "password" to password
-            )
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
