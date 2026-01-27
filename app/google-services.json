@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454901298795",
+    "project_id": "projeto-grupo-hospital",
+    "storage_bucket": "projeto-grupo-hospital.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454901298795:android:35d021ee873acaa60f232e",
+        "android_client_info": {
+          "package_name": "com.example.projetogrupohospital"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454901298795-kp5q276vbcjpt8t2lsvq0fbkdvrako59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9Y3dWzvVE3GSPVw4GdcsxplIcL0cdaZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454901298795-kp5q276vbcjpt8t2lsvq0fbkdvrako59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
