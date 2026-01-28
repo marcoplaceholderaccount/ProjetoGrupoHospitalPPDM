@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoGrupoHospital">
         <activity
+            android:name=".MenuProfissionaisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistarProfissionalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestaoProfissionaisActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
