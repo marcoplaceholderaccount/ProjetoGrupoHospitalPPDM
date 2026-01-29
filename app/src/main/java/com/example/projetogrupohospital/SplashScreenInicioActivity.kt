@@ -20,7 +20,7 @@ class SplashScreenInicioActivity : AppCompatActivity() {
         setContentView(janela.root)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MenuInicialActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }, 3000);
 
