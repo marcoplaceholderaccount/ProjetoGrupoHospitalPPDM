@@ -5,14 +5,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.projetogrupohospital.databinding.ActivityMenuProfissionaisBinding
+import com.example.projetogrupohospital.databinding.ActivityMenuConsultasBinding
 
-class MenuProfissionaisActivity : AppCompatActivity() {
-    private lateinit var janela : ActivityMenuProfissionaisBinding
+class MenuConsultasActivity : AppCompatActivity() {
+    private lateinit var janela : ActivityMenuConsultasBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        janela = ActivityMenuProfissionaisBinding.inflate(layoutInflater)
+        janela = ActivityMenuConsultasBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
     }

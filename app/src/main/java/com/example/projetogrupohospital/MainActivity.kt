@@ -1,6 +1,7 @@
 package com.example.projetogrupohospital
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this@MainActivity, "Conta Criada!", Toast.LENGTH_SHORT).show()
+                        var i = Intent(this, MenuProfissionaisActivity::class.java)
+                        startActivity(i)
                     } else {
                         Toast.makeText(this@MainActivity, "Erro no Registro!", Toast.LENGTH_SHORT).show()
                     }

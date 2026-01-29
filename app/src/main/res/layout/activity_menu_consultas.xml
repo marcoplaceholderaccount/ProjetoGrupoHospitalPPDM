@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".MenuProfissionaisActivity">
+    tools:context=".MenuConsultasActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hospital Care"
+                android:text="Gestao de Consultas"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="@color/white"/>
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Registar um novo profissional"
+            android:text="Registar uma nova consulta"
             android:textStyle="bold"
             android:gravity="center"
             android:textSize="20sp"/>
@@ -67,13 +67,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nome"
+                android:text="Data e Hora"
                 android:textSize="15sp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Introduza o nome"/>
+                android:hint="ex: 10-02-2026 16:00"/>
 
         </LinearLayout>
 
@@ -86,7 +86,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cargo"
+                android:text="Paciente"
                 android:textSize="15sp"/>
 
             <Spinner
@@ -105,13 +105,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contacto"
+                android:text="Medico"
                 android:textSize="15sp"/>
 
-            <EditText
+            <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Introduza o contacto"/>
+                />
 
         </LinearLayout>
 
@@ -124,15 +124,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Turno"
+                android:text="Especialidade"
                 android:textSize="15sp"/>
 
-            <Spinner
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:hint="ex: Cardiologia"/>
 
         </LinearLayout>
+
+
 
         <Button
             android:id="@+id/btnConfirmar"
@@ -153,7 +155,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lista de Funcionários"
+                android:text="Lista de Consultas"
                 android:gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
@@ -167,13 +169,12 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerFuncionarios"
+            android:id="@+id/recyclerConsultas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@android:layout/simple_list_item_1" />
-
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

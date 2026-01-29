@@ -12,13 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoGrupoHospital">
         <activity
+            android:name=".GestaoInternamentoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuInternamentoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuConsultasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarProfissionaisActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuProfissionaisActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegistarProfissionalActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GestaoProfissionaisActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

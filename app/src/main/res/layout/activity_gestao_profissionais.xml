@@ -27,34 +27,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lista de Funcionários"
-            android:gravity="center"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Faça um clique curto para editar ou clique longo para remover"
-            android:gravity="center"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    </LinearLayout>
 
 
 
