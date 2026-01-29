@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoGrupoHospital">
         <activity
+            android:name=".HistoricoInternamentoActivity"
+            android:exported="false" />
+        <activity
             android:name=".GestaoInternamentoActivity"
             android:exported="false" />
         <activity
