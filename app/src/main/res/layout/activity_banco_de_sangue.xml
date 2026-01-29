@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BancoDeSangueActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#FF0000">
+
+        <ImageView
+            android:layout_marginLeft="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icone_banco_de_sangue"
+            ></ImageView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Banco de Sangue"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/white">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantidade Disponível :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="__________"></TextView>
+
+        <Spinner
+            android:layout_marginLeft="5dp"
+            android:layout_width="120dp"
+            android:layout_height="25dp"></Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Percentual :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Digite a quantidade a ser utilizada :"
+        android:textStyle="bold"
+        android:textSize="18sp"></TextView>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_width="200dp"
+            android:inputType="number"
+            android:layout_height="40dp"
+            android:hint="ex: 500ml"></EditText>
+
+        <Button
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Utilizar"
+            android:backgroundTint="#FF0000"></Button>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/botaodoadoresdipo"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/listadoadores_botao"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"></ImageButton>
+
+
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageButton
+            android:id="@+id/botaoregistardoadores"
+            android:src="@drawable/doadores_botaof"
+            android:layout_width="140dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"></ImageButton>
+
+
+        <ImageButton
+            android:id="@+id/botaodoacao"
+            android:src="@drawable/doacao_botaof"
+            android:layout_marginLeft="30dp"
+            android:layout_width="140dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"></ImageButton>
+
+    </LinearLayout>
+
+</LinearLayout>

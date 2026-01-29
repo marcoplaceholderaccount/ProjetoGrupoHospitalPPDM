@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DoacaoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:background="#FF0000">
+
+                <ImageView
+                    android:layout_marginLeft="100dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icone_banco_de_sangue"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Efectuar Doação"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/white">
+                </TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecione o doador :"
+                android:textSize="18sp"></TextView>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"></ListView>
+
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Quantidade: "
+                    android:textSize="18sp"></TextView>
+
+                <EditText
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="ex:450ml"></EditText>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doar"
+                    android:layout_marginLeft="5dp"
+                    android:backgroundTint="#FF0000">
+
+                </Button>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Histórico de Doações :"
+                android:textSize="18sp"></TextView>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="380dp"></ListView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

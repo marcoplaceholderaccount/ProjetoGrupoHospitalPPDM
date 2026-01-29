@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this@MainActivity, "Conta Criada!", Toast.LENGTH_SHORT).show()
-                        var i = Intent(this, MenuProfissionaisActivity::class.java)
+                        var i = Intent(this, MenuInicialActivity::class.java)
                         startActivity(i)
                     } else {
                         Toast.makeText(this@MainActivity, "Erro no Registro!", Toast.LENGTH_SHORT).show()

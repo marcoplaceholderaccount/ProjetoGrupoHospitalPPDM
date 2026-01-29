@@ -12,22 +12,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoGrupoHospital">
         <activity
-            android:name=".TelaGestaoPacienteActivity"
+            android:name=".SalasActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistarPacienteActivity"
+            android:name=".RegistoDoadorActivity"
             android:exported="false" />
         <activity
-            android:name=".ListarPacienteActivity"
+            android:name=".SplashScreenInicioActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GestaoSalaActivity"
             android:exported="false" />
         <activity
-            android:name=".GestaoPessoasActivity"
+            android:name=".DoacaoActivity"
             android:exported="false" />
         <activity
-            android:name=".GestaoPacienteEditarActivity"
+            android:name=".DoadoresDisponiveisActivity"
             android:exported="false" />
         <activity
-            android:name=".EditarPacienteActivity"
+            android:name=".BancoDeSangueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstatisticasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuInicialActivity"
             android:exported="false" />
         <activity
             android:name=".HistoricoInternamentoActivity"
