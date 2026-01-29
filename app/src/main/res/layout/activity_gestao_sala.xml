@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GestaoSalaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#32cd32">
+
+        <ImageView
+            android:layout_marginLeft="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_hospital"
+            ></ImageView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Gestão de Salas"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/white">
+        </TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registo  da Sala :"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center"></TextView>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:hint="ex: sala1"></EditText>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo de Sala :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <Spinner
+            android:layout_width="120dp"
+            android:layout_height="25dp"></Spinner>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capacidade :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <EditText
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:hint="ex:10"></EditText>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registar"
+        android:layout_gravity="center"
+        android:backgroundTint="#32cd32"></Button>
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista de Salas :"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center"></TextView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"></ListView>
+
+</LinearLayout>
