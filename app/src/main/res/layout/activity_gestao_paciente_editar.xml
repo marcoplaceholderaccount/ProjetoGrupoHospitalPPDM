@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GestaoPacienteEditarActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#32cd32">
+
+        <ImageView
+            android:layout_marginLeft="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_hospital"
+            >
+        </ImageView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Editar paciente"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/white">
+        </TextView>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insira o ID do paciente a ser editado"
+        android:textSize="20sp"
+        android:layout_marginTop="250dp"
+        android:gravity="center"
+
+        />
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:hint="Digite o ID do paciente"
+        android:gravity="center"
+        android:layout_marginTop="5sp"/>
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="150sp"
+        android:text="Confirmar"
+        android:backgroundTint="#00FF00"
+        />
+
+
+</LinearLayout>
