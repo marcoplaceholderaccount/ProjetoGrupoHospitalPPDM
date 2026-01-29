@@ -17,6 +17,11 @@ class MenuInicialActivity : AppCompatActivity() {
         janela = ActivityMenuInicialBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
+        janela.botaogestaopessoas.setOnClickListener {
+            val intent = Intent(this, GestaoPessoasActivity::class.java)
+            startActivity(intent)
+        }
+
         janela.botaogestaosala.setOnClickListener {
             val intent = Intent(this, GestaoSalaActivity::class.java)
             startActivity(intent)

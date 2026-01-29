@@ -14,8 +14,7 @@ class GestaoPessoasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        janela= ActivityGestaoPessoasBinding.inflate(layoutInflater)
+        janela = ActivityGestaoPessoasBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
 
