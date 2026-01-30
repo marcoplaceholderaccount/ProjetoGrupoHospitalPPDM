@@ -50,6 +50,7 @@
             android:textSize="18sp"></TextView>
 
         <EditText
+            android:id="@+id/campocodd"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:hint="Digite o código"></EditText>
@@ -71,6 +72,7 @@
             android:textSize="18sp"></TextView>
 
         <EditText
+            android:id="@+id/camponomed"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:hint="Digite o nome"
@@ -98,14 +100,16 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/radiomasculino"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:text="Masculino"></RadioButton>
 
             <RadioButton
+                android:id="@+id/radiofemenino"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="Femenino"></RadioButton>
+                android:text="Feminino"></RadioButton>
 
         </RadioGroup>
 
@@ -126,6 +130,7 @@
             android:textSize="18sp"></TextView>
 
         <Spinner
+            android:id="@+id/opcaosangue"
             android:layout_width="120dp"
             android:layout_height="25dp"></Spinner>
 
@@ -147,6 +152,7 @@
             android:textSize="18sp"></TextView>
 
         <EditText
+            android:id="@+id/camponascd"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:inputType="date"
@@ -164,10 +170,12 @@
         android:textSize="18sp"></TextView>
 
     <ListView
+        android:id="@+id/lisviewrequisitosdoar"
         android:layout_width="match_parent"
         android:layout_height="328dp"></ListView>
 
     <Button
+        android:id="@+id/botaoregistard"
         android:backgroundTint="#FF0000"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
