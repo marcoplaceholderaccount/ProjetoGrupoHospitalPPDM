@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EstatisticasActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#1E90FF">
+
+        <ImageView
+            android:layout_marginLeft="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logotipo_estatisticas"
+            ></ImageView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Estatisticas Gerais "
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/white">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Totais de Pacientes :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Totais de Fúncionarios :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consultas Realizadas :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Internamentos Realizados :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Totais de Salas :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Totais de Doadores :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Totais de Doações Realizadas :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantidade de Sangue Disponível :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantidade de Sangue Utilizado :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="19dp"
+            android:text="__________"></TextView>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
