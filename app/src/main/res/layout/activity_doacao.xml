@@ -45,7 +45,7 @@
             </LinearLayout>
 
             <TextView
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
@@ -53,9 +53,52 @@
                 android:text="Selecione o doador :"
                 android:textSize="18sp"></TextView>
 
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerdoadores"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"></ListView>
+                android:layout_height="200dp"></androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Codigo : "
+                    android:textSize="18sp"></TextView>
+
+                <EditText
+                    android:id="@+id/campocoddoacao"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:hint="ex:001D"></EditText>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Mês: "
+                    android:textSize="18sp"></TextView>
+
+                <Spinner
+                    android:id="@+id/comboboxmes"
+                    android:layout_width="200dp"
+                    android:layout_height="38dp"></Spinner>
+
+            </LinearLayout>
 
 
             <LinearLayout
@@ -67,17 +110,19 @@
                 <TextView
                     android:layout_marginLeft="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_height="30dp"
                     android:text="Quantidade: "
                     android:textSize="18sp"></TextView>
 
                 <EditText
+                    android:id="@+id/campoquantidade"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:hint="ex:450ml"></EditText>
 
                 <Button
+                    android:id="@+id/botaoefetuardoacao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Doar"
@@ -97,9 +142,11 @@
                 android:text="Histórico de Doações :"
                 android:textSize="18sp"></TextView>
 
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerdoacoes"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="380dp"></ListView>
+                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
 
         </LinearLayout>
