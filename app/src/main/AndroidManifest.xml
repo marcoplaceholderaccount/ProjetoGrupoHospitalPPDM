@@ -63,6 +63,24 @@
             android:name=".MenuProfissionaisActivity"
             android:exported="false" />
         <activity
+            android:name=".GestaoPessoasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarPacienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestaoPacienteEditarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListarPacienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistarPacienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaGestaoPacienteActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
