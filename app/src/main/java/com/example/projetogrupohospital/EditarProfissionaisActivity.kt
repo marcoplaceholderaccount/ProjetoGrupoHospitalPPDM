@@ -40,7 +40,7 @@ class EditarProfissionaisActivity : AppCompatActivity() {
 
             // Ação do botão Confirmar para salvar as alterações
             janela.btnConfirmar.setOnClickListener {
-                p.nome = janela.profNome.text.toString()
+                p.nome = janela.profNovoNome.text.toString()
                 p.contacto = janela.profCont.text.toString()
                 p.turno = janela.profTurno.selectedItem.toString()
 
