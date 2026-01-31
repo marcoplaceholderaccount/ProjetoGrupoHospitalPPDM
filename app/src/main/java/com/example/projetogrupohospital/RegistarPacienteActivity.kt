@@ -32,6 +32,8 @@ class RegistarPacienteActivity : AppCompatActivity() {
             val endereco = janela.pacEndereco.text.toString().trim()
 
             if (nome.isEmpty() || id.isEmpty() || data.isEmpty() || sexo.isEmpty() || endereco.isEmpty()) {
+
+
                 Toast.makeText(this,"Preencha todos os campos corretamente",Toast.LENGTH_SHORT).show()
             }
             else{
@@ -39,6 +41,8 @@ class RegistarPacienteActivity : AppCompatActivity() {
                 val paciente = Paciente(nome,id,data, contato, sexo,endereco)
                 ListaGlobal.listapacientes.add(paciente)
                 Toast.makeText(this,"Adicionado com sucesso",Toast.LENGTH_SHORT).show()
+
+                finish()
             }
         }
     }

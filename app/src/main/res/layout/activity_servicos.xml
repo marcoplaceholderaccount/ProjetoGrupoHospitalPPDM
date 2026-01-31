@@ -5,9 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GestaoPacienteEditarActivity"
+    tools:context=".ServicosActivity"
     android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -15,6 +14,7 @@
         android:background="#32cd32">
 
         <ImageView
+            android:id="@+id/teste"
             android:layout_marginLeft="100dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -27,40 +27,61 @@
             android:layout_marginLeft="5dp"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Editar paciente"
+            android:text="Gestão de serviços"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textSize="20dp"
             android:textColor="@color/white">
         </TextView>
 
+
     </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/btnConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:layout_marginTop="100dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icone_consulta"
+        android:background="@drawable/caixa_redondada"
+        android:layout_gravity="center"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insira o ID do paciente a ser editado"
+        android:text="Gestão consulta"
         android:textSize="20sp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
 
         />
-    <EditText
-        android:id="@+id/et1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:hint="Digite o ID do paciente"
-        android:gravity="center"
-        android:layout_marginTop="5sp"/>
-    <Button
-        android:id="@+id/bt1"
+
+
+    <ImageButton
+        android:id="@+id/btnInternamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginLeft="150sp"
-        android:text="Confirmar"
-        android:backgroundTint="#00FF00"
-        />
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icone_internamento"
+        android:background="@drawable/caixa_redondada"
+        android:layout_gravity="center"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestão Internamento"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        />
 
 </LinearLayout>
