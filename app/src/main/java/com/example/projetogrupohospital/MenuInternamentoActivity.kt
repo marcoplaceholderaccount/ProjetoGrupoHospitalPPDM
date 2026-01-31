@@ -22,5 +22,10 @@ class MenuInternamentoActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        janela.btnHistorico.setOnClickListener {
+            val intent = Intent(this, HistoricoInternamentoActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

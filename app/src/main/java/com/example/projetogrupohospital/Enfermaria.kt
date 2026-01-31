@@ -7,4 +7,10 @@ class Enfermaria(
     quantidade : Int,
     var listainternamentos : MutableList<Internamento> = mutableListOf()
 ) : Sala(codigo = codigo, nome = nome, tipo = tipo, quantidade = quantidade) {
+
+    // Função para processar a alta
+    fun darAlta(internamento: Internamento) {
+        internamento.estado = false
+    }
+
 }

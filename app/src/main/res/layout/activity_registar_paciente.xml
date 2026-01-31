@@ -75,6 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="DD/MM/YY"
+        android:inputType="date"
         />
     <TextView
         android:layout_width="match_parent"
@@ -90,19 +91,22 @@
         android:layout_height="wrap_content"
         android:hint="Masculino/Feminino"
         />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="Contato"
         android:textSize="20sp"
-        android:layout_marginTop="5dp"
 
         />
+
     <EditText
         android:id="@+id/pacContato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="+238 *******"
+        android:inputType="phone"
         />
     <TextView
         android:layout_width="match_parent"

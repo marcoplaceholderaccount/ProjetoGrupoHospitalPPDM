@@ -15,5 +15,17 @@ class EstatisticasActivity : AppCompatActivity() {
         janela = ActivityEstatisticasBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
+        atualizarDashboard()
+
     }
+        private fun atualizarDashboard() {
+
+            janela.totalP.text = ListaGlobal.listapacientes.size.toString()
+            janela.totalF.text = ListaGlobal.listaprofissional.size.toString()
+            janela.totalS.text = ListaGlobal.listasalas.size.toString()
+
+        }
+
+
+
 }
