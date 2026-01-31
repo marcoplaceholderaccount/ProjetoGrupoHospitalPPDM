@@ -21,7 +21,18 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:background="#32cd32">
+
+            <ImageView
+                android:layout_marginLeft="50dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo_hospital"
+                >
+            </ImageView>
+
             <TextView
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gestao de Internamento"

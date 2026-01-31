@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Gestao de Professionais"
+            android:text="Internamento"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@color/white"/>
