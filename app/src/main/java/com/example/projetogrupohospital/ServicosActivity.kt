@@ -25,6 +25,11 @@ class ServicosActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        janela.btnInternamento.setOnClickListener {
+            val intent = Intent(this, MenuInternamentoActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
     }

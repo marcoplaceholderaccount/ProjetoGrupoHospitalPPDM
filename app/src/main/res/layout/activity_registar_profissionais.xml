@@ -122,7 +122,8 @@
                 android:id="@+id/profCont"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Introduza o contacto"/>
+                android:hint="Introduza o contacto"
+                android:inputType="phone"/>
 
         </LinearLayout>
 

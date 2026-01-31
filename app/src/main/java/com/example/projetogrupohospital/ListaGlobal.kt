@@ -9,4 +9,6 @@ object ListaGlobal {
     var listaconsultas : MutableList<Consulta> = mutableListOf()
     var listapacientes : MutableList<Paciente> = mutableListOf()
 
+    var listainternamentostotal : MutableList<Internamento> = mutableListOf()
+
 }

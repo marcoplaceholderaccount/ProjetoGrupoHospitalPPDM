@@ -1,7 +1,10 @@
 package com.example.projetogrupohospital
 
+import InternamentoAdapter
 import android.R
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -9,68 +12,76 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.projetogrupohospital.databinding.ActivityGestaoInternamentoBinding
+import kotlin.collections.mutableListOf
 
 class GestaoInternamentoActivity : AppCompatActivity() {
     private lateinit var janela : ActivityGestaoInternamentoBinding
+    private lateinit var adapterInternamento: InternamentoAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         janela = ActivityGestaoInternamentoBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        val adapterT = ArrayAdapter(
-            this,
-            R.layout.simple_spinner_item,
-            ListaGlobal.listapacientes)
-        janela.spinPac.adapter = adapterT
+        // Configuração dos Spinners
+        janela.spinPac.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, ListaGlobal.listapacientes)
+        janela.spinQuar.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, listaEnfermarias())
 
-        val adapterP = ArrayAdapter(
-            this,
-            R.layout.simple_spinner_item,
-            listaEnfermarias()
-        )
-        janela.spinQuar
+        // Configura o clique no RecyclerView para dar alta
+        adapterInternamento = InternamentoAdapter(mutableListOf()) { internamentoClicado ->
+            // A mágica: pegamos a enfermaria de dentro do próprio internamento!
+            val enf = internamentoClicado.enfermaria
+            enf.darAlta(internamentoClicado)
 
-        janela.btnConfirmar.setOnClickListener {
-            val cod = janela.codInt.text.toString()
-            val dataE = janela.dataEnt.text.toString()
-            val dataS = janela.dataSaid.text.toString()
-            val pac = janela.spinPac.selectedItem as Paciente
-            val quarto = janela.spinQuar.selectedItem as Enfermaria
+            atualizarInterface()
+            Toast.makeText(this, "Alta processada na ${enf.nome}", Toast.LENGTH_SHORT).show()
+        }
+        janela.recyclerInternamentos.adapter = adapterInternamento
 
-            if (cod.isNotEmpty() && dataE.isNotEmpty() && dataE.isNotEmpty() && dataS.isNotEmpty()) {
-                if (quarto.listainternamentos.size < quarto.quantidade) {
-                    val internamento = Internamento(cod, pac, dataS, dataS, true)
-                    quarto.listainternamentos.add(internamento)
-
-                    Toast.makeText(this, "Internamento registado na ${quarto.nome}", Toast.LENGTH_SHORT).show()
-
-                    // Limpar os campos para a próxima entrada
-                    janela.codInt.text.clear()
-                    janela.dataEnt.text.clear()
-                    janela.dataSaid.text.clear()
-                } else {
-                    Toast.makeText(this, "Enfermaria lotada!", Toast.LENGTH_SHORT).show()
-                }
-            }else {
-                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+        // Atualiza a lista quando trocar de enfermaria no Spinner
+        janela.spinQuar.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                atualizarInterface()
             }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
-
-
+        janela.btnConfirmar.setOnClickListener { cadastrar() }
     }
 
-    fun listaEnfermarias() : MutableList<Enfermaria>{
-        var lista : MutableList<Enfermaria> = mutableListOf()
-        for (i in ListaGlobal.listasalas){
-            if(i is Enfermaria){
-                lista.add(i)
+    private fun cadastrar() {
+        val cod = janela.codInt.text.toString()
+        val dE = janela.dataEnt.text.toString()
+        val dS = janela.dataSaid.text.toString()
+        val pac = janela.spinPac.selectedItem as Paciente
+        val enf = janela.spinQuar.selectedItem as Enfermaria
+
+        if (cod.isNotEmpty() && dE.isNotEmpty() && dS.isNotEmpty()) {
+            // Criamos o internamento passando a enfermaria atual
+            val novo = Internamento(cod, pac, enf, dE, dS, true)
+            if (enf.listainternamentos.size < enf.quantidade) {
+                enf.listainternamentos.add(novo)
+                ListaGlobal.listainternamentostotal.add(novo)
+                atualizarInterface()
+                limparCampos()
+            } else {
+                Toast.makeText(this,"A sala está lotada!",Toast.LENGTH_SHORT).show()
             }
         }
-        return lista
     }
 
+    private fun atualizarInterface() {
+        val enf = janela.spinQuar.selectedItem as Enfermaria
+        // Filtramos apenas quem ainda está ativo (estado == true)
+        val ativos = enf.listainternamentos.filter { it.estado }
+        adapterInternamento.atualizar(ativos)
+    }
 
+    private fun limparCampos() {
+        janela.codInt.text.clear()
+        janela.dataEnt.text.clear()
+        janela.dataSaid.text.clear()
+    }
 
+    fun listaEnfermarias(): List<Enfermaria> = ListaGlobal.listasalas.filterIsInstance<Enfermaria>()
 }

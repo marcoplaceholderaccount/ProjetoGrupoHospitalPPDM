@@ -3,6 +3,7 @@ package com.example.projetogrupohospital
 import android.R
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projetogrupohospital.databinding.ActivityRegistarProfissionaisBinding
@@ -42,9 +43,11 @@ class RegistarProfissionaisActivity : AppCompatActivity() {
                 if (cargo == "Medico") {
                     val med = Medico(cod, nome, contacto, turno)
                     ListaGlobal.listaprofissional.add(med)
+                    Toast.makeText(this,"Medico $nome registado com sucesso!",Toast.LENGTH_SHORT).show()
                 } else {
                     val enf = Enfermeiro(cod, nome, contacto, turno)
                     ListaGlobal.listaprofissional.add(enf)
+                    Toast.makeText(this,"Enfermeiro $nome registado com sucesso!",Toast.LENGTH_SHORT).show()
                 }
 
                 // Limpar os campos para a próxima entrada
@@ -52,6 +55,8 @@ class RegistarProfissionaisActivity : AppCompatActivity() {
                 janela.profNome.text.clear()
                 janela.profCont.text.clear()
 
+            }else {
+                Toast.makeText(this,"Preencha todos os campos corretamente!",Toast.LENGTH_SHORT).show()
             }
         }
 
