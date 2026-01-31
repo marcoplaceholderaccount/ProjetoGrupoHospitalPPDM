@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoGrupoHospital">
         <activity
+            android:name=".EditarPacienteActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListaProfissionaisActivity"
             android:exported="false" />
         <activity
@@ -67,9 +70,6 @@
             android:exported="false" />
         <activity
             android:name=".GestaoPessoasActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditarPacienteActivity"
             android:exported="false" />
         <activity
             android:name=".GestaoPacienteEditarActivity"
