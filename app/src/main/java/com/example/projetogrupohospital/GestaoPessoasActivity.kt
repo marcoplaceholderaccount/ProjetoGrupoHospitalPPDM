@@ -23,5 +23,8 @@ class GestaoPessoasActivity : AppCompatActivity() {
             val intent = Intent(this, TelaGestaoPacienteActivity::class.java)
             startActivity(intent)
         }
+        janela.btnCancelar.setOnClickListener {
+            finish()
+        }
     }
 }

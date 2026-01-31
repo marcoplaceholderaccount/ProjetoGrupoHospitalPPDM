@@ -20,6 +20,7 @@ class EstatisticasActivity : AppCompatActivity() {
     }
         private fun atualizarDashboard() {
 
+            //retorna o tamanho de cada lista e mostra nas estatiscas
             janela.totalP.text = ListaGlobal.listapacientes.size.toString()
             janela.totalF.text = ListaGlobal.listaprofissional.size.toString()
             janela.totalS.text = ListaGlobal.listasalas.size.toString()

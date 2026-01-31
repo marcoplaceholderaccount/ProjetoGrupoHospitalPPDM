@@ -27,9 +27,9 @@ class GestaoInternamentoActivity : AppCompatActivity() {
         janela.spinPac.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, ListaGlobal.listapacientes)
         janela.spinQuar.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, listaEnfermarias())
 
-        // Configura o clique no RecyclerView para dar alta
+        // Configuração do clique no RecyclerView para dar alta
         adapterInternamento = InternamentoAdapter(mutableListOf()) { internamentoClicado ->
-            // A mágica: pegamos a enfermaria de dentro do próprio internamento!
+
             val enf = internamentoClicado.enfermaria
             enf.darAlta(internamentoClicado)
 
@@ -57,7 +57,7 @@ class GestaoInternamentoActivity : AppCompatActivity() {
         val enf = janela.spinQuar.selectedItem as Enfermaria
 
         if (cod.isNotEmpty() && dE.isNotEmpty() && dS.isNotEmpty()) {
-            // Criamos o internamento passando a enfermaria atual
+            // Criação do internamento passando a enfermaria atual
             val novo = Internamento(cod, pac, enf, dE, dS, true)
             if (enf.listainternamentos.size < enf.quantidade) {
                 enf.listainternamentos.add(novo)
@@ -72,7 +72,7 @@ class GestaoInternamentoActivity : AppCompatActivity() {
 
     private fun atualizarInterface() {
         val enf = janela.spinQuar.selectedItem as Enfermaria
-        // Filtramos apenas quem ainda está ativo (estado == true)
+        // filtragem apenas de quem ainda está ativo (estado == true)
         val ativos = enf.listainternamentos.filter { it.estado }
         adapterInternamento.atualizar(ativos)
     }
