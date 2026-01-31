@@ -1,5 +1,6 @@
 package com.example.projetogrupohospital
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,13 @@ class ServicosActivity : AppCompatActivity() {
         janela= ActivityServicosBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        janela.btnConsulta
+        janela.btnConsulta.setOnClickListener {
+
+            val intent = Intent(this, MenuConsultasActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
     }
 }
