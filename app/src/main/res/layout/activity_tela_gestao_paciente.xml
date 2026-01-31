@@ -52,14 +52,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/registar_paciente" />
 
-        <ImageButton
-            android:id="@+id/btnEditarP"
-            android:layout_width="250dp"
-            android:layout_height="110dp"
-            android:layout_marginBottom="40dp"
-            android:scaleType="fitCenter"
-            android:background="?android:attr/selectableItemBackground"
-            android:src="@drawable/editar_paciente" />
+
 
         <ImageButton
             android:id="@+id/btnListarP"

@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.projetogrupohospital.databinding.ActivityEditarPacienteBinding
-import com.example.projetogrupohospital.databinding.ActivityTelaGestaoPacienteBinding
+import com.example.projetogrupohospital.databinding.ActivityListarPacienteBinding
 
 class EditarPacienteActivity : AppCompatActivity() {
 
     private lateinit var janela: ActivityEditarPacienteBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -18,6 +20,8 @@ class EditarPacienteActivity : AppCompatActivity() {
         janela= ActivityEditarPacienteBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
+        val codigoRecebido= intent.getStringExtra("CODIGO_PACIENTE")
 
+
+        }
     }
-}

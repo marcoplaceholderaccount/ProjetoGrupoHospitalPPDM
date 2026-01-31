@@ -27,6 +27,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/profNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -48,28 +49,10 @@
             android:textSize="15sp"/>
 
         <EditText
+            android:id="@+id/profNovoNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Introduza o nome"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cargo"
-            android:textSize="15sp"/>
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
 
     </LinearLayout>
 
@@ -86,6 +69,7 @@
             android:textSize="15sp"/>
 
         <EditText
+            android:id="@+id/profCont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Introduza o contacto"/>
@@ -105,6 +89,7 @@
             android:textSize="15sp"/>
 
         <Spinner
+            android:id="@+id/profTurno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -119,6 +104,7 @@
         android:orientation="horizontal">
 
     <Button
+        android:id="@+id/btnConfirmar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirmar"
@@ -127,11 +113,12 @@
         android:backgroundTint="#32cd32"/>
 
     <Button
+        android:id="@+id/btnCancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirmar"
+        android:text="Cancelar"
         android:layout_gravity="center"
-        android:backgroundTint="#32cd32"/>
+        android:backgroundTint="#ff0000"/>
 
     </LinearLayout>
 

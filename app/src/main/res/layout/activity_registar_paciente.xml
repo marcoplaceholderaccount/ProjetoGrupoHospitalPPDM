@@ -43,6 +43,7 @@
         android:textSize="20sp"
         />
     <EditText
+        android:id="@+id/pacNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Digite o nome do paciente"
@@ -56,6 +57,7 @@
 
         />
     <EditText
+        android:id="@+id/pacID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Digite o ID do paciente"
@@ -69,6 +71,7 @@
 
         />
     <EditText
+        android:id="@+id/pacData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="DD/MM/YY"
@@ -82,6 +85,7 @@
 
         />
     <EditText
+        android:id="@+id/pacSexo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Masculino/Feminino"
@@ -95,6 +99,7 @@
 
         />
     <EditText
+        android:id="@+id/pacContato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="+238 *******"
@@ -108,6 +113,7 @@
 
         />
     <EditText
+        android:id="@+id/pacEndereco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Insira o endreço"
@@ -119,6 +125,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
+        android:layout_marginTop="40dp"
         >
         <Button
             android:id="@+id/btnCancelar"
