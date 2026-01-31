@@ -21,5 +21,7 @@ class SalasActivity : AppCompatActivity() {
 
         janela.textonomesala.text = nomeSala
         janela.textotiposala.text = tipoSala
+
+        //ola mermao
     }
 }
