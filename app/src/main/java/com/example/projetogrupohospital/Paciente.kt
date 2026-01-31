@@ -1,11 +1,18 @@
 package com.example.projetogrupohospital
 
 class Paciente (
-    val nome: String,
-    val id: String,
-    val datanasc: String,
-    val sexo: String,
-    val endereco: String){
+    var nome: String,
+    var id: String,
+    var datanasc: String,
+    var contato: String,
+    var sexo:String,
+    var endereco:String
+){
+
+    override fun toString(): String {
+        return "Nome: $nome ID: $id Sexo:$sexo"
+    }
+
 
 }
 
