@@ -1,6 +1,7 @@
 package com.example.projetogrupohospital
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +16,13 @@ class DoadoresDisponiveisActivity : AppCompatActivity() {
         enableEdgeToEdge()
         janela = ActivityDoadoresDisponiveisBinding.inflate(layoutInflater)
         setContentView(janela.root)
+
+        val adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_list_item_1,
+            ListaGlobal.listadoadores.map { it.cod + " - " + it.nome + " - " + it.sexo + " - " + it.tiposangue })
+
+        janela.listviewdoadoresdispo.adapter = adapter
 
     }
 }

@@ -59,6 +59,7 @@
                 android:textSize="15sp"/>
 
             <EditText
+                android:id="@+id/profCod"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Introduza o codigo"/>
@@ -78,6 +79,7 @@
                 android:textSize="15sp"/>
 
             <EditText
+                android:id="@+id/profNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Introduza o nome"/>
@@ -97,6 +99,7 @@
                 android:textSize="15sp"/>
 
             <Spinner
+                android:id="@+id/cargo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
@@ -116,6 +119,7 @@
                 android:textSize="15sp"/>
 
             <EditText
+                android:id="@+id/profCont"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Introduza o contacto"/>
@@ -135,6 +139,7 @@
                 android:textSize="15sp"/>
 
             <Spinner
+                android:id="@+id/profTurno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
