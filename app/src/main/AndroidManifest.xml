@@ -18,9 +18,6 @@
             android:name=".ConsultaActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuInternamentosActivity"
-            android:exported="false" />
-        <activity
             android:name=".ServicosActivity"
             android:exported="false" />
         <activity

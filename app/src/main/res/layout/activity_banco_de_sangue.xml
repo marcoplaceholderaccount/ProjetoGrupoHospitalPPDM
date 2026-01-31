@@ -20,7 +20,9 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:src="@drawable/icone_banco_de_sangue"
-            ></ImageView>
+            >
+
+        </ImageView>
 
         <TextView
             android:layout_marginLeft="5dp"
@@ -47,13 +49,18 @@
             android:layout_height="wrap_content"
             android:text="Estado :"
             android:textStyle="bold"
-            android:textSize="18sp"></TextView>
+            android:textSize="18sp">
+
+        </TextView>
 
         <TextView
+            android:id="@+id/txtestadobanco"
             android:layout_marginLeft="5dp"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:text="__________"></TextView>
+            android:text="__________">
+
+        </TextView>
 
     </LinearLayout>
 
@@ -69,42 +76,23 @@
             android:layout_height="wrap_content"
             android:text="Quantidade Disponível :"
             android:textStyle="bold"
-            android:textSize="18sp"></TextView>
+            android:textSize="18sp">
+
+        </TextView>
 
         <TextView
+            android:id="@+id/txtquantidadedispo"
             android:layout_marginLeft="5dp"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:text="__________"></TextView>
+            android:text="__________">
 
-        <Spinner
-            android:layout_marginLeft="5dp"
-            android:layout_width="120dp"
-            android:layout_height="25dp"></Spinner>
+        </TextView>
+
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Percentual :"
-            android:textStyle="bold"
-            android:textSize="18sp"></TextView>
-
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:text="__________"></TextView>
-
-    </LinearLayout>
 
     <TextView
         android:layout_marginTop="10dp"
@@ -114,7 +102,9 @@
         android:layout_height="wrap_content"
         android:text="Digite a quantidade a ser utilizada :"
         android:textStyle="bold"
-        android:textSize="18sp"></TextView>
+        android:textSize="18sp">
+
+    </TextView>
 
     <LinearLayout
         android:layout_marginTop="15dp"
@@ -123,18 +113,24 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/campoquantidadeutilizado"
             android:layout_marginLeft="20dp"
             android:layout_width="200dp"
             android:inputType="number"
             android:layout_height="40dp"
-            android:hint="ex: 500ml"></EditText>
+            android:hint="ex: 500ml">
+
+        </EditText>
 
         <Button
+            android:id="@+id/botaoutilizarsangue"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="Utilizar"
-            android:backgroundTint="#FF0000"></Button>
+            android:backgroundTint="#FF0000">
+
+        </Button>
 
     </LinearLayout>
 
@@ -144,7 +140,9 @@
         android:src="@drawable/listadoadores_botao"
         android:layout_width="140dp"
         android:layout_height="150dp"
-        android:layout_gravity="center"></ImageButton>
+        android:layout_gravity="center">
+
+    </ImageButton>
 
 
 
@@ -160,7 +158,9 @@
             android:src="@drawable/doadores_botaof"
             android:layout_width="140dp"
             android:layout_height="150dp"
-            android:layout_gravity="center"></ImageButton>
+            android:layout_gravity="center">
+
+        </ImageButton>
 
 
         <ImageButton
@@ -169,7 +169,9 @@
             android:layout_marginLeft="30dp"
             android:layout_width="140dp"
             android:layout_height="150dp"
-            android:layout_gravity="center"></ImageButton>
+            android:layout_gravity="center">
+
+        </ImageButton>
 
     </LinearLayout>
 
