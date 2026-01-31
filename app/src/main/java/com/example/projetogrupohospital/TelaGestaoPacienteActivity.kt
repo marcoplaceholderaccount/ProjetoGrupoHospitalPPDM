@@ -26,12 +26,7 @@ class TelaGestaoPacienteActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val botao2= janela.btnEditarP
-        botao2.setOnClickListener {
 
-            val intent= Intent(this, EditarPacienteActivity:: class.java)
-
-        }
 
         val botao3= janela.btnListarP
         botao3.setOnClickListener{

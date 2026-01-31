@@ -18,13 +18,11 @@ class GestaoPessoasActivity : AppCompatActivity() {
         janela = ActivityGestaoPessoasBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        val botao1= janela.btnFuncionario
-        botao1.setOnClickListener {
+        janela.btnFuncionario.setOnClickListener{
             val intent = Intent(this, MenuProfissionaisActivity::class.java)
             startActivity(intent)
         }
-        val botao2= janela.btnPaciente
-        botao2.setOnClickListener {
+        janela.btnPaciente.setOnClickListener {
             val intent = Intent(this, TelaGestaoPacienteActivity::class.java)
             startActivity(intent)
         }

@@ -19,6 +19,10 @@ class RegistarPacienteActivity : AppCompatActivity() {
         janela= ActivityRegistarPacienteBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
+        janela.btnCancelar.setOnClickListener{
+            finish()
+        }
+
         janela.btnRegistar.setOnClickListener {
 
         val nome = janela.pacNome.text.toString().trim()
@@ -31,10 +35,8 @@ class RegistarPacienteActivity : AppCompatActivity() {
             Toast.makeText(this,"Preencha todos os campos corretamente",Toast.LENGTH_SHORT).show()
         }
 
-
-
-
-
+           val paciente = Paciente(nome,id,data,sexo,endereco)
+            ListaGlobal.listapacientes.add(paciente)
 
     }
   }
