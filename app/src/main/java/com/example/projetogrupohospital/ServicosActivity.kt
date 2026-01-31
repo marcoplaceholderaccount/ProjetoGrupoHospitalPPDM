@@ -20,7 +20,6 @@ class ServicosActivity : AppCompatActivity() {
         setContentView(janela.root)
 
         janela.btnConsulta.setOnClickListener {
-
             val intent = Intent(this, MenuConsultasActivity::class.java)
             startActivity(intent)
         }

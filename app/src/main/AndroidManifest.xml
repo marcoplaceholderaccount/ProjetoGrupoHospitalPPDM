@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoGrupoHospital">
         <activity
+            android:name=".ListarConsultasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuConsultasActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuConsultasActivity"
             android:exported="false" />
         <activity
@@ -70,9 +76,6 @@
             android:exported="false" />
         <activity
             android:name=".MenuInternamentoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuConsultasActivity"
             android:exported="false" />
         <activity
             android:name=".EditarProfissionaisActivity"

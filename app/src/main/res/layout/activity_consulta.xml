@@ -30,7 +30,9 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:src="@drawable/logo_hospital"
-                    ></ImageView>
+                    >
+
+                </ImageView>
 
                 <TextView
                     android:layout_marginLeft="15dp"
@@ -52,13 +54,17 @@
                 android:text="Selecione o Paciente :"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:layout_gravity="center"></TextView>
+                android:layout_gravity="center">
+
+            </TextView>
 
 
             <ListView
                 android:id="@+id/listviewpacientes"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></ListView>
+                android:layout_height="200dp">
+
+            </ListView>
 
             <LinearLayout
                 android:layout_marginTop="5dp"
@@ -72,7 +78,9 @@
                     android:layout_height="wrap_content"
                     android:text="Código :"
                     android:textStyle="bold"
-                    android:textSize="18sp"></TextView>
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
                     android:id="@+id/txtcodpaciente"
@@ -81,7 +89,9 @@
                     android:layout_height="wrap_content"
                     android:text="____"
                     android:textStyle="bold"
-                    android:textSize="18sp"></TextView>
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
                     android:layout_marginLeft="10dp"
@@ -89,7 +99,9 @@
                     android:layout_height="wrap_content"
                     android:text="Nome :"
                     android:textStyle="bold"
-                    android:textSize="18sp"></TextView>
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
                     android:id="@+id/txtnomepaciente"
@@ -98,7 +110,9 @@
                     android:layout_height="wrap_content"
                     android:text="____"
                     android:textStyle="bold"
-                    android:textSize="18sp"></TextView>
+                    android:textSize="18sp">
+
+                </TextView>
 
 
             </LinearLayout>
@@ -110,13 +124,17 @@
                 android:text="Selecione o Médico: :"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:layout_gravity="center"></TextView>
+                android:layout_gravity="center">
+
+            </TextView>
 
 
             <ListView
                 android:id="@+id/listviewmedicos"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></ListView>
+                android:layout_height="200dp">
+
+            </ListView>
 
             <LinearLayout
                 android:layout_marginTop="5dp"
@@ -130,7 +148,9 @@
                     android:layout_height="wrap_content"
                     android:text="Código :"
                     android:textStyle="bold"
-                    android:textSize="18sp"></TextView>
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
                     android:id="@+id/txtcodmedico"
@@ -139,7 +159,9 @@
                     android:layout_height="wrap_content"
                     android:text="____"
                     android:textStyle="bold"
-                    android:textSize="18sp"></TextView>
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
                     android:layout_marginLeft="10dp"
@@ -281,11 +303,15 @@
                 android:layout_height="wrap_content"
                 android:text="Consulta"
                 android:layout_gravity="center"
-                android:backgroundTint="#32cd32"></Button>
+                android:backgroundTint="#32cd32">
+
+            </Button>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></LinearLayout>
+                android:layout_height="50dp">
+
+            </LinearLayout>
 
 
         </LinearLayout>

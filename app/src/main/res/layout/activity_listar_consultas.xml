@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListarConsultasActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#32cd32">
+
+        <ImageView
+
+            android:layout_marginLeft="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_hospital"
+            >
+        </ImageView>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Lista de consulta"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/white">
+        </TextView>
+
+    </LinearLayout>
+
+
+    <ListView
+
+        android:layout_marginTop="40dp"
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+
+</LinearLayout>
