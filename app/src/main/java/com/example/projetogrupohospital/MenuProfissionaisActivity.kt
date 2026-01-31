@@ -25,18 +25,41 @@ class MenuProfissionaisActivity : AppCompatActivity() {
             turnos)
         janela.profTurno.adapter = adapterT
 
-        val cod = janela.profCod
-        val nome = janela.profNome
-        val contacto = janela.profCont
-        val turno = janela.profTurno.selectedItem.toString()
-
+        val cargos = listOf<String>("Medico","Enfermeiro")
+        val adapterC = ArrayAdapter(
+            this,
+            R.layout.simple_spinner_item,
+            cargos
+        )
+        janela.cargo.adapter = adapterC
 
         janela.btnConfirmar.setOnClickListener {
 
+            val cod = janela.profCod.text.toString()
+            val nome = janela.profNome.text.toString()
+            val contacto = janela.profCont.text.toString()
+            val turno = janela.profTurno.selectedItem.toString()
+            val cargo = janela.cargo.selectedItem.toString()
 
+            if (cod.isNotEmpty() && nome.isNotEmpty() && contacto.isNotEmpty()) {
+                if (cargo == "Medico") {
+                    val med = Medico(cod, nome, contacto, turno)
+                    ListaGlobal.listaprofissional.add(med)
+                } else {
+                    val enf = Enfermeiro(cod, nome, contacto, turno)
+                    ListaGlobal.listaprofissional.add(enf)
+                }
 
+                // Limpar os campos para a próxima entrada
+                janela.profCod.text.clear()
+                janela.profNome.text.clear()
+                janela.profCont.text.clear()
 
+            }
         }
+
+
+
 
     }
 }

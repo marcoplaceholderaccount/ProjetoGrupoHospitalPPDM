@@ -15,5 +15,7 @@ class EditarProfissionaisActivity : AppCompatActivity() {
         janela = ActivityEditarProfissionaisBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
+
+
     }
 }
