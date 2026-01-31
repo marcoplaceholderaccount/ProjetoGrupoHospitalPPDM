@@ -52,8 +52,7 @@ class ListarPacienteActivity : AppCompatActivity() {
             val pacienteParaRemover = ListaGlobal.listapacientes[position]
             val codigoParaDeletar = pacienteParaRemover.id
 
-            // Aqui você chamaria sua função de banco de dados, ex:
-            // bancoDados.deletarPaciente(codigoParaDeletar)
+
 
             ListaGlobal.listapacientes.removeAt(position)
             meuAdapter.notifyDataSetChanged()
