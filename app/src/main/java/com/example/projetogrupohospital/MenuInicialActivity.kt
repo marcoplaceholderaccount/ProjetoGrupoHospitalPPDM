@@ -36,6 +36,10 @@ class MenuInicialActivity : AppCompatActivity() {
             val intent = Intent(this, EstatisticasActivity::class.java)
             startActivity(intent)
         }
+        janela.btnServicos.setOnClickListener {
+            val intent = Intent(this, ServicosActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

@@ -21,7 +21,9 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:src="@drawable/logo_hospital"
-            ></ImageView>
+            >
+
+        </ImageView>
 
         <TextView
             android:layout_marginLeft="5dp"
@@ -53,6 +55,7 @@
 
 
         <ImageButton
+            android:id="@+id/btnServicos"
             android:layout_marginLeft="8dp"
             android:layout_width="200dp"
             android:layout_height="match_parent"
@@ -97,7 +100,9 @@
         android:text="Estátisticas"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:backgroundTint="#32cd32"></Button>
+        android:backgroundTint="#32cd32">
+
+    </Button>
 
 
 
