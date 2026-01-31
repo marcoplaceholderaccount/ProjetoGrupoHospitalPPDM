@@ -15,6 +15,9 @@
             android:name=".MenuProfissionalActivity"
             android:exported="false" />
         <activity
+            android:name=".EditarPacienteActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListaProfissionaisActivity"
             android:exported="false" />
         <activity
@@ -70,9 +73,6 @@
             android:exported="false" />
         <activity
             android:name=".GestaoPessoasActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditarPacienteActivity"
             android:exported="false" />
         <activity
             android:name=".GestaoPacienteEditarActivity"

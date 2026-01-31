@@ -54,11 +54,36 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Código :"
+            android:textStyle="bold"
+            android:textSize="18sp"></TextView>
+
+        <EditText
+            android:id="@+id/campocodigosala"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:hint="ex: 001S"></EditText>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Nome :"
             android:textStyle="bold"
             android:textSize="18sp"></TextView>
 
         <EditText
+            android:id="@+id/camponomesala"
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:hint="ex: sala1"></EditText>
@@ -81,9 +106,28 @@
             android:textStyle="bold"
             android:textSize="18sp"></TextView>
 
-        <Spinner
-            android:layout_width="120dp"
-            android:layout_height="25dp"></Spinner>
+        <RadioGroup
+            android:id="@+id/tipogrupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbconsultorio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consultório">
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rbenfermaria"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enfermaria">
+            </RadioButton>
+
+        </RadioGroup>
 
 
     </LinearLayout>
@@ -104,6 +148,7 @@
             android:textSize="18sp"></TextView>
 
         <EditText
+            android:id="@+id/campocapacidadesala"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:inputType="number"
@@ -112,6 +157,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/botaoregistarsala"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -130,6 +176,7 @@
         android:layout_gravity="center"></TextView>
 
     <ListView
+        android:id="@+id/listviewsalas"
         android:layout_width="match_parent"
         android:layout_height="400dp"></ListView>
 

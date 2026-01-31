@@ -24,20 +24,22 @@ class RegistarPacienteActivity : AppCompatActivity() {
         }
 
         janela.btnRegistar.setOnClickListener {
+            val nome = janela.pacNome.text.toString().trim()
+            val id = janela.pacID.text.toString().trim()
+            val data = janela.pacData.text.toString().trim()
+            val sexo = janela.pacSexo.text.toString().trim()
+            val contato= janela.pacContato.text.toString().trim()
+            val endereco = janela.pacEndereco.text.toString().trim()
 
-        val nome = janela.pacNome.text.toString().trim()
-        val id = janela.pacID.text.toString().trim()
-        val data = janela.pacData.text.toString().trim()
-        val sexo = janela.pacSexo.text.toString().trim()
-        val endereco = janela.pacEndereco.text.toString().trim()
+            if (nome.isEmpty() || id.isEmpty() || data.isEmpty() || sexo.isEmpty() || endereco.isEmpty()) {
+                Toast.makeText(this,"Preencha todos os campos corretamente",Toast.LENGTH_SHORT).show()
+            }
+            else{
 
-        if (nome.isEmpty() && id.isEmpty() && data.isEmpty() && sexo.isEmpty() && endereco.isEmpty()) {
-            Toast.makeText(this,"Preencha todos os campos corretamente",Toast.LENGTH_SHORT).show()
+                val paciente = Paciente(nome,id,data, contato, sexo,endereco)
+                ListaGlobal.listapacientes.add(paciente)
+                Toast.makeText(this,"Adicionado com sucesso",Toast.LENGTH_SHORT).show()
+            }
         }
-
-           val paciente = Paciente(nome,id,data,sexo,endereco)
-            ListaGlobal.listapacientes.add(paciente)
-
     }
-  }
 }

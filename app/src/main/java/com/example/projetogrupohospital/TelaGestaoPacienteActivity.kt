@@ -28,9 +28,10 @@ class TelaGestaoPacienteActivity : AppCompatActivity() {
 
 
 
-        val botao3= janela.btnListarP
-        botao3.setOnClickListener{
-            val Intent= Intent(this, ListarPacienteActivity:: class.java)
+         janela.btnListarP.setOnClickListener{
+            val intent= Intent(this, ListarPacienteActivity:: class.java)
+             startActivity(intent)
+
         }
     }
 }

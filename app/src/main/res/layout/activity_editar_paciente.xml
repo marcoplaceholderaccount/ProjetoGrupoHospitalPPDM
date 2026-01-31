@@ -15,6 +15,7 @@
         android:background="#32cd32">
 
         <ImageView
+            android:id="@+id/teste"
             android:layout_marginLeft="100dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -44,23 +45,12 @@
         android:textSize="20sp"
         />
     <EditText
+        android:id="@+id/pacNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Digite o nome do paciente"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ID Paciente"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
 
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Digite o ID do paciente"
-        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,6 +60,7 @@
 
         />
     <EditText
+        android:id="@+id/pacData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="DD/MM/YY"
@@ -83,6 +74,7 @@
 
         />
     <EditText
+        android:id="@+id/pacSexo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Masculino/Feminino"
@@ -96,6 +88,7 @@
 
         />
     <EditText
+        android:id="@+id/pacContato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="+238 *******"
@@ -109,12 +102,11 @@
 
         />
     <EditText
+        android:id="@+id/pacEndereco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Insira o endreço"
         />
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -138,14 +130,6 @@
             android:text="Editar"
             android:textColor="@color/black"
             android:backgroundTint="#00FF00"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Eliminar"
-            android:backgroundTint="#ff0000"
-            android:layout_marginLeft="20dp"
-            />
 
     </LinearLayout>
 
