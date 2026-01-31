@@ -53,11 +53,10 @@
                 android:text="Selecione o doador :"
                 android:textSize="18sp"></TextView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerdoadores"
-                android:layout_marginTop="10dp"
+            <ListView
+                android:id="@+id/listviewdodadores"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="250dp"></ListView>
             <LinearLayout
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
@@ -142,11 +141,16 @@
                 android:text="Histórico de Doações :"
                 android:textSize="18sp"></TextView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerdoacoes"
-                android:layout_marginTop="10dp"
+
+            <ListView
+                android:id="@+id/listviewhistoricodoacoes"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="320dp"></ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"></LinearLayout>
+
 
 
         </LinearLayout>

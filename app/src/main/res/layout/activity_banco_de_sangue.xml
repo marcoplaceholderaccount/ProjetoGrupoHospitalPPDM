@@ -11,162 +11,167 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#FF0000"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#FF0000">
 
         <ImageView
+            android:layout_marginLeft="100dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="100dp"
-            android:src="@drawable/icone_banco_de_sangue"></ImageView>
+            android:src="@drawable/icone_banco_de_sangue"
+            >
+
+        </ImageView>
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
             android:text="Banco de Sangue"
-            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textStyle="bold"
             android:textSize="20dp"
-            android:textStyle="bold"></TextView>
+            android:textColor="@color/white">
+        </TextView>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
         android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
         android:orientation="horizontal">
 
         <TextView
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:text="Estado :"
-            android:textSize="18sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold"
+            android:textSize="18sp">
+
+        </TextView>
 
         <TextView
+            android:id="@+id/txtestadobanco"
+            android:layout_marginLeft="5dp"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:text="__________"></TextView>
+            android:text="__________">
+
+        </TextView>
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <TextView
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:text="Quantidade Disponível :"
-            android:textSize="18sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold"
+            android:textSize="18sp">
+
+        </TextView>
 
         <TextView
+            android:id="@+id/txtquantidadedispo"
+            android:layout_marginLeft="5dp"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:text="__________"></TextView>
+            android:text="__________">
 
-        <Spinner
-            android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="5dp"></Spinner>
+        </TextView>
+
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Percentual :"
-            android:textSize="18sp"
-            android:textStyle="bold"></TextView>
-
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:text="__________"></TextView>
-
-    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Digite a quantidade a ser utilizada :"
-        android:textSize="18sp"
-        android:textStyle="bold"></TextView>
+        android:textStyle="bold"
+        android:textSize="18sp">
+
+    </TextView>
 
     <LinearLayout
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:id="@+id/campoquantidadeutilizado"
             android:layout_marginLeft="20dp"
-            android:hint="ex: 500ml"
-            android:inputType="number"></EditText>
+            android:layout_width="200dp"
+            android:inputType="number"
+            android:layout_height="40dp"
+            android:hint="ex: 500ml">
+
+        </EditText>
 
         <Button
+            android:id="@+id/botaoutilizarsangue"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:backgroundTint="#FF0000"
-            android:text="Utilizar"></Button>
+            android:text="Utilizar"
+            android:backgroundTint="#FF0000">
+
+        </Button>
 
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/botaodoadoresdipo"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/listadoadores_botao"
         android:layout_width="140dp"
         android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/listadoadores_botao"></ImageButton>
+        android:layout_gravity="center">
+
+    </ImageButton>
+
 
 
     <LinearLayout
 
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
         <ImageButton
             android:id="@+id/botaoregistardoadores"
+            android:src="@drawable/doadores_botaof"
             android:layout_width="140dp"
             android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:src="@drawable/doadores_botaof"></ImageButton>
+            android:layout_gravity="center">
+
+        </ImageButton>
 
 
         <ImageButton
             android:id="@+id/botaodoacao"
+            android:src="@drawable/doacao_botaof"
+            android:layout_marginLeft="30dp"
             android:layout_width="140dp"
             android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/doacao_botaof"></ImageButton>
+            android:layout_gravity="center">
+
+        </ImageButton>
 
     </LinearLayout>
 
