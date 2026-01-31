@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoGrupoHospital">
         <activity
+            android:name=".ListaProfissionaisActivity"
+            android:exported="false" />
+        <activity
             android:name=".SalasActivity"
             android:exported="false" />
         <activity

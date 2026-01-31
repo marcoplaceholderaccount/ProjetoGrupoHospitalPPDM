@@ -155,37 +155,6 @@
             android:layout_gravity="center"
             android:backgroundTint="#32cd32"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lista de Funcionários"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Toque para editar ou pressione para remover"
-                android:gravity="center"
-                android:textSize="12sp"/>
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerFuncionarios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@android:layout/simple_list_item_1" />
-
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
