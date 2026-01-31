@@ -45,4 +45,5 @@
         tools:listitem="@android:layout/simple_list_item_1" />
 
     </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>
