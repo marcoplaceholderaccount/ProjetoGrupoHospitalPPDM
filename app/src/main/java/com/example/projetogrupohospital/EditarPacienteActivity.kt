@@ -19,5 +19,7 @@ class EditarPacienteActivity : AppCompatActivity() {
         setContentView(janela.root)
 
 
+
+
     }
 }
