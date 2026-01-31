@@ -14,7 +14,18 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:background="#32cd32">
+
+        <ImageView
+            android:layout_marginLeft="50dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_hospital"
+            >
+        </ImageView>
+
         <TextView
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Menu de Internamento"
@@ -32,7 +43,7 @@
         android:maxHeight="150dp"
         android:layout_marginTop="50dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/medical_team"
+        android:src="@drawable/icone_internamento"
         android:background="@drawable/caixa_redondada"
         android:layout_gravity="center"/>
 
@@ -53,7 +64,7 @@
         android:layout_marginTop="50dp"
         android:maxHeight="150dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/medical_team"
+        android:src="@drawable/icone_hitorico_internamento"
         android:background="@drawable/caixa_redondada"
         android:layout_gravity="center"/>
 
