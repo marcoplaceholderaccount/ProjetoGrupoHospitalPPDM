@@ -15,5 +15,11 @@ class SalasActivity : AppCompatActivity() {
         enableEdgeToEdge()
         janela = ActivitySalasBinding.inflate(layoutInflater)
         setContentView(janela.root)
+        val codigosala = intent.getStringExtra("codigo_sala")
+        val nomeSala = intent.getStringExtra("nome_sala")
+        val tipoSala = intent.getStringExtra("tipo_sala")
+
+        janela.textonomesala.text = nomeSala
+        janela.textotiposala.text = tipoSala
     }
 }
