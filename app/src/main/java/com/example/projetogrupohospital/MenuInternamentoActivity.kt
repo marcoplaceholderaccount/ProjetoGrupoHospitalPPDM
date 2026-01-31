@@ -1,5 +1,6 @@
 package com.example.projetogrupohospital
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,11 @@ class MenuInternamentoActivity : AppCompatActivity() {
         enableEdgeToEdge()
         janela = ActivityMenuInternamentoBinding.inflate(layoutInflater)
         setContentView(janela.root)
+
+        janela.btnRegistar.setOnClickListener {
+            val intent = Intent(this, GestaoInternamentoActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

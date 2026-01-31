@@ -52,6 +52,7 @@
                 android:textSize="15sp"/>
 
             <EditText
+                android:id="@+id/codInt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Introduza o codigo"/>
@@ -71,6 +72,7 @@
                 android:textSize="15sp"/>
 
             <EditText
+                android:id="@+id/dataEnt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="ex: 10-02-2026"/>
@@ -90,6 +92,7 @@
                 android:textSize="15sp"/>
 
             <EditText
+                android:id="@+id/dataSaid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="ex: 10-02-2026"/>
@@ -109,25 +112,7 @@
                 android:textSize="15sp"/>
 
             <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tipo de internamento"
-                android:textSize="15sp"/>
-
-            <Spinner
+                android:id="@+id/spinPac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
@@ -146,10 +131,10 @@
                 android:text="Quarto"
                 android:textSize="15sp"/>
 
-            <EditText
+            <Spinner
+                android:id="@+id/spinQuar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="ex: 5B"/>
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
@@ -188,7 +173,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerConsultas"
+            android:id="@+id/recyclerInternamentos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
