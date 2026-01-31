@@ -3,19 +3,16 @@ package com.example.projetogrupohospital
 import android.R
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.projetogrupohospital.databinding.ActivityMenuProfissionaisBinding
+import com.example.projetogrupohospital.databinding.ActivityRegistarProfissionaisBinding
 
-class MenuProfissionaisActivity : AppCompatActivity() {
-    private lateinit var janela : ActivityMenuProfissionaisBinding
+class RegistarProfissionaisActivity : AppCompatActivity() {
+    private lateinit var janela : ActivityRegistarProfissionaisBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        janela = ActivityMenuProfissionaisBinding.inflate(layoutInflater)
+        janela = ActivityRegistarProfissionaisBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
         val turnos = listOf<String>("Diurno","Noturno")
