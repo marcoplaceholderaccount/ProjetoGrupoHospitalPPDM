@@ -23,9 +23,13 @@ class EstatisticasActivity : AppCompatActivity() {
             janela.totalP.text = ListaGlobal.listapacientes.size.toString()
             janela.totalF.text = ListaGlobal.listaprofissional.size.toString()
             janela.totalS.text = ListaGlobal.listasalas.size.toString()
+            janela.totalR.text= ListaGlobal.listaconsultas.size.toString()
+            janela.totalIR.text= ListaGlobal.listainternamentostotal.size.toString()
+            janela.totalD.text= ListaGlobal.listadoadores.size.toString()
+            janela.totalDR.text= ListaGlobal.listadoacoes.size.toString()
+
+
 
         }
-
-
 
 }

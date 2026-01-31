@@ -75,7 +75,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="DD/MM/YY"
-        android:inputType="date"
         />
     <TextView
         android:layout_width="match_parent"
@@ -106,7 +105,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="+238 *******"
-        android:inputType="phone"
+
         />
     <TextView
         android:layout_width="match_parent"

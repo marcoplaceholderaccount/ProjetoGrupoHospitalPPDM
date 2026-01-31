@@ -29,15 +29,15 @@ class ListarPacienteActivity : AppCompatActivity() {
         )
 
 
-        val minhaListView = findViewById<ListView>(R.id.listView)
-        minhaListView.adapter = meuAdapter
+        val listaPaciente = findViewById<ListView>(R.id.listView)
+        listaPaciente.adapter = meuAdapter
 
         ListaGlobal.listapacientes
 
 
 
         // 1. Clique Curto: Editar usando o Código do Paciente
-        minhaListView.setOnItemClickListener { parent, view, position, id ->
+        listaPaciente.setOnItemClickListener { parent, view, position, id ->
             // Pegamos o objeto Paciente da nossa lista original usando a posição
             val pacienteSelecionado = ListaGlobal.listapacientes[position]
             val codigoPaciente = pacienteSelecionado.id
@@ -48,7 +48,7 @@ class ListarPacienteActivity : AppCompatActivity() {
         }
 
 // 2. Clique Longo: Eliminar usando o Código do Paciente
-        minhaListView.setOnItemLongClickListener { parent, view, position, id ->
+        listaPaciente.setOnItemLongClickListener { parent, view, position, id ->
             val pacienteParaRemover = ListaGlobal.listapacientes[position]
             val codigoParaDeletar = pacienteParaRemover.id
 
