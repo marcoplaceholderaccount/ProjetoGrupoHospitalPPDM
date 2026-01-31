@@ -56,7 +56,7 @@
         <TextView
             android:id="@+id/txtestadobanco"
             android:layout_marginLeft="5dp"
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:text="__________">
 
@@ -83,7 +83,7 @@
         <TextView
             android:id="@+id/txtquantidadedispo"
             android:layout_marginLeft="5dp"
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:text="__________">
 

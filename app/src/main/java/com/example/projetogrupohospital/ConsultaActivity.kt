@@ -90,8 +90,8 @@ class ConsultaActivity : AppCompatActivity() {
                 consultorioselecionado.nome,
                 datac)
             ListaGlobal.listaconsultas.add(novaconsulta)
-
-
+            Toast.makeText(this, "Consulta marcada com sucesso", Toast.LENGTH_SHORT).show()
+            finish()
 
         }
     }
