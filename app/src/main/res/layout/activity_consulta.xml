@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConsultaActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:background="#32cd32">
+
+                <ImageView
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo_hospital"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="Realização de Consulta"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/white">
+                </TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecione o Paciente :"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"></TextView>
+
+
+            <ListView
+                android:id="@+id/listviewpacientes"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"></ListView>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Código :"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:id="@+id/txtcodpaciente"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="____"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome :"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:id="@+id/txtnomepaciente"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="____"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecione o Médico: :"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"></TextView>
+
+
+            <ListView
+                android:id="@+id/listviewmedicos"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"></ListView>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Código :"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:id="@+id/txtcodmedico"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="____"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome :"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:id="@+id/txtnomemadico"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="____"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecione o Consultorio Disponivel: :"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"></TextView>
+
+
+            <ListView
+                android:id="@+id/listviewconsultorios"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"></ListView>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Código :"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:id="@+id/txtcodconsultorio"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="____"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome :"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:id="@+id/txtnomeconsultorio"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="____"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informações da consulta :"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"></TextView>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Código :"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <EditText
+                    android:id="@+id/campocodigoconsulta"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:hint="ex: 001S"></EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data :"
+                    android:textStyle="bold"
+                    android:textSize="18sp"></TextView>
+
+                <EditText
+                    android:id="@+id/campodataconsulta"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:inputType="date"
+                    android:hint="DD/MM/YY"></EditText>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/botaorealizarconsulta"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consulta"
+                android:layout_gravity="center"
+                android:backgroundTint="#32cd32"></Button>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"></LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

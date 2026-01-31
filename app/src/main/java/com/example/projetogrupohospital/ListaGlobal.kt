@@ -6,6 +6,7 @@ object ListaGlobal {
     var listadoadores : MutableList<Doador> = mutableListOf()
     var listaprofissional : MutableList<Profissional> = mutableListOf()
 
+    var listaconsultas : MutableList<Consulta> = mutableListOf()
     var listapacientes : MutableList<Paciente> = mutableListOf()
 
 }
