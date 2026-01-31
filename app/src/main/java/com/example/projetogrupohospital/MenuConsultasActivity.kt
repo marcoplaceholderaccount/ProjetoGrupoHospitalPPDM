@@ -3,17 +3,17 @@ package com.example.projetogrupohospital
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.projetogrupohospital.databinding.ActivityMenuConsultasBinding
+import androidx.viewbinding.ViewBinding
+import com.example.projetogrupohospital.databinding.ActivityMenuConsultaBinding
 
 class MenuConsultasActivity : AppCompatActivity() {
-    private lateinit var janela : ActivityMenuConsultasBinding
+
+    private lateinit var janela: ActivityMenuConsultaBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        janela = ActivityMenuConsultasBinding.inflate(layoutInflater)
-        setContentView(janela.root)
+        setContentView(R.layout.activity_menu_consulta)
 
     }
 }
