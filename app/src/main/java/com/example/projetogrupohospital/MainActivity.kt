@@ -1,9 +1,7 @@
 package com.example.projetogrupohospital
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,70 +13,76 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var janela : ActivityMainBinding
-    private lateinit var auth : FirebaseAuth
-    private lateinit var db : FirebaseFirestore
+
+    private lateinit var janela: ActivityMainBinding
+    private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
+
+    private var dadosCarregados = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         janela = ActivityMainBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        // INICIALIZAÇÃO (Obrigatório ser aqui)
         auth = Firebase.auth
         db = Firebase.firestore
 
-        // BOTÃO ENTRAR
+        // Carregar dados globais
+        DataLoader.carregarTudo {
+            dadosCarregados = true
+            Toast.makeText(this, "Dados carregados com sucesso!", Toast.LENGTH_SHORT).show()
+        }
+
+        // ---------- LOGIN ----------
         janela.btnEntrar.setOnClickListener {
+
+            if (!dadosCarregados) {
+                Toast.makeText(this, "A carregar dados... aguarde.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val email = janela.user.text.toString()
             val password = janela.pass.text.toString()
 
+            if (email.isBlank() || password.isBlank()) {
+                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this@MainActivity, "Conta Criada!", Toast.LENGTH_SHORT).show()
-                        var i = Intent(this, MenuInicialActivity::class.java)
+                        Toast.makeText(this, "Login efectuado!", Toast.LENGTH_SHORT).show()
+
+                        val i = Intent(this, MenuInicialActivity::class.java)
                         startActivity(i)
+                        finish()
                     } else {
-                        Toast.makeText(this@MainActivity, "Erro no Registro!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Erro no login!", Toast.LENGTH_SHORT).show()
                     }
                 }
         }
 
-        // BOTÃO REGISTAR (Só Auth)
+        // ---------- REGISTAR ----------
         janela.btnRegistar.setOnClickListener {
             val email = janela.user.text.toString()
             val password = janela.pass.text.toString()
 
+            if (email.isBlank() || password.isBlank()) {
+                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this@MainActivity, "Conta Criada!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Conta criada!", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this@MainActivity, "Erro no Registro!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Erro ao registar!", Toast.LENGTH_SHORT).show()
                     }
-                }
-        }
-
-        // BOTÃO GUARDAR (Só DB)
-        janela.btnGuardar.setOnClickListener {
-            val email = janela.user.text.toString()
-            val password = janela.pass.text.toString()
-
-            val user = hashMapOf(
-                "email" to email,
-                "password" to password
-            )
-
-            db.collection("users")
-                .add(user)
-                .addOnSuccessListener { doc ->
-                    Toast.makeText(this@MainActivity, "Guardado! ID: ${doc.id}", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this@MainActivity, "Erro ao Guardar!", Toast.LENGTH_SHORT).show()
                 }
         }
     }

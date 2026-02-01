@@ -17,7 +17,7 @@ class ListaProfissionaisActivity : AppCompatActivity() {
         janela = ActivityListaProfissionaisBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        // Dentro do onCreate da ListaProfissionaisActivity.kt
+
         adapterProf = ProfissionalAdapter(ListaGlobal.listaprofissional) { codigoClicado ->
             // Quando clicar, abre a tela de edição passando o código
             val intent = Intent(this, EditarProfissionaisActivity::class.java)

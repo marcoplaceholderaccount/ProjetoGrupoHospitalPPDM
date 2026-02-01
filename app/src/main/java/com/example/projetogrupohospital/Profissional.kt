@@ -1,11 +1,13 @@
 package com.example.projetogrupohospital
 
-abstract class Profissional(
-    var codigo : String,
-    var nome : String,
-    var contacto : String,
-    var turno : String
-    )
-{
-
+open class Profissional(
+    var codigo: String = "",
+    var nome: String = "",
+    var contacto: String = "",
+    var turno: String = "",
+    var tipo: String = ""      // ✅ NOVO
+) {
+    override fun toString(): String {
+        return "$codigo - $nome"
+    }
 }

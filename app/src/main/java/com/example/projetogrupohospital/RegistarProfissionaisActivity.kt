@@ -43,10 +43,18 @@ class RegistarProfissionaisActivity : AppCompatActivity() {
                 if (cargo == "Medico") {
                     val med = Medico(cod, nome, contacto, turno)
                     ListaGlobal.listaprofissional.add(med)
+                    // Salva no Firebase
+                    FirebaseManager.profissionaisRef()
+                        .document(med.codigo)
+                        .set(med)
                     Toast.makeText(this,"Medico $nome registado com sucesso!",Toast.LENGTH_SHORT).show()
                 } else {
                     val enf = Enfermeiro(cod, nome, contacto, turno)
                     ListaGlobal.listaprofissional.add(enf)
+                    // Salva no Firebase
+                    FirebaseManager.profissionaisRef()
+                        .document(enf.codigo)
+                        .set(enf)
                     Toast.makeText(this,"Enfermeiro $nome registado com sucesso!",Toast.LENGTH_SHORT).show()
                 }
 

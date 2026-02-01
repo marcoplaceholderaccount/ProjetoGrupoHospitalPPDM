@@ -109,6 +109,10 @@ class RegistoDoadorActivity : AppCompatActivity() {
             }
             val doador = Doador(codigod, nomed, sexod, tsangue,datanascd)
             ListaGlobal.listadoadores.add(doador)
+            // Salva no Firebase
+            FirebaseManager.doadoresRef()
+                .document(doador.cod)
+                .set(doador)
             Toast.makeText(this@RegistoDoadorActivity, "Doador registado com sucesso!", Toast.LENGTH_SHORT).show()
 
         }

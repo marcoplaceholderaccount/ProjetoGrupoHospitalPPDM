@@ -1,103 +1,105 @@
 package com.example.projetogrupohospital
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.projetogrupohospital.databinding.ActivityBancoDeSangueBinding
 import com.example.projetogrupohospital.databinding.ActivityGestaoSalaBinding
-import kotlin.text.get
-import kotlin.toString
 
 class GestaoSalaActivity : AppCompatActivity() {
+
     private lateinit var janela: ActivityGestaoSalaBinding
+
+    // lista de strings para o adapter
+    private val linhas = mutableListOf<String>()
+    private lateinit var adapter: ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         janela = ActivityGestaoSalaBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            ListaGlobal.listasalas.map { it.codigo + " - " + it.nome + " - " + it.tipo + " - " + it.quantidade})
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, linhas)
         janela.listviewsalas.adapter = adapter
-        //PARA QUE A LISTA CONTINUA VISIVEL MESMO TROCANDO DE ACTIVITIES EM VEZ DE SO QND REGISTA
-        fun onResume() {
-            super.onResume()
-            adapter.notifyDataSetChanged()
-        }
 
+        atualizarLista()
 
-        //REGISTO DA SALA
         janela.botaoregistarsala.setOnClickListener {
 
-            val codigosala = janela.campocodigosala.text.toString()
-            var nomesala = janela.camponomesala.text.toString()
-            var tiposala = ""
-            var capacidadesala = janela.campocapacidadesala.text.toString()
+            val codigosala = janela.campocodigosala.text.toString().trim()
+            val nomesala = janela.camponomesala.text.toString().trim()
+            val capacidadesalaStr = janela.campocapacidadesala.text.toString().trim()
 
-            var campos = listOf(codigosala,nomesala,capacidadesala)
-
-            if(janela.rbenfermaria.isChecked){
-                tiposala = janela.rbenfermaria.text.toString()
-            }else if(janela.rbconsultorio.isChecked){
-                tiposala = janela.rbconsultorio.text.toString()
-            }
-
-            if(campos.any{it.isBlank()}){
-                Toast.makeText(this@GestaoSalaActivity, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+            if (codigosala.isBlank() || nomesala.isBlank() || capacidadesalaStr.isBlank()) {
+                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if(ListaGlobal.listasalas.any{it.codigo == codigosala}){
-                Toast.makeText(this@GestaoSalaActivity, "Já existe uma sala com esse Código", Toast.LENGTH_SHORT).show()
+            val capacidade = try {
+                capacidadesalaStr.toInt()
+            } catch (e: Exception) {
+                Toast.makeText(this, "Capacidade inválida!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
-
             }
 
-            lateinit var sala : Sala
+            if (ListaGlobal.listasalas.any { it.codigo == codigosala }) {
+                Toast.makeText(this, "Já existe uma sala com esse Código", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-            when {
-                janela.rbconsultorio.isChecked ->{
-                    sala = Consultorio(codigosala,nomesala,tiposala,capacidadesala.toInt())
+            val sala: Sala = when {
+                janela.rbconsultorio.isChecked -> {
+                    // ✅ métodos 1: Consultorio define tipo sozinho
+                    Consultorio(codigosala, nomesala, capacidade)
                 }
 
-                janela.rbenfermaria.isChecked ->{
-                    sala = Enfermaria(codigosala,nomesala,tiposala,capacidadesala.toInt())
+                janela.rbenfermaria.isChecked -> {
+                    // Enfermaria mantém tipo como vem do rádio
+                    Enfermaria(codigosala, nomesala, "Enfermaria", capacidade)
                 }
-                else->{
-                    Toast.makeText(this@GestaoSalaActivity, "Selecione o tipo de sala a ser registada", Toast.LENGTH_SHORT).show()
+
+                else -> {
+                    Toast.makeText(this, "Selecione o tipo de sala a ser registada", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
-
                 }
             }
-            Toast.makeText(this@GestaoSalaActivity, "Sala registada com sucesso", Toast.LENGTH_SHORT).show()
-            ListaGlobal.listasalas.add(sala)
 
-            val adapter = ArrayAdapter(
-                this,
-                android.R.layout.simple_list_item_1,
-                ListaGlobal.listasalas.map { it.codigo + " - " + it.nome + " - " + it.tipo + " - " + it.quantidade})
-            janela.listviewsalas.adapter = adapter
-            adapter.notifyDataSetChanged()
-
+            // Guardar no Firestore com confirmação
+            FirebaseManager.salasRef()
+                .document(sala.codigo)
+                .set(sala)
+                .addOnSuccessListener {
+                    ListaGlobal.listasalas.add(sala)
+                    Toast.makeText(this, "Sala registada com sucesso", Toast.LENGTH_SHORT).show()
+                    limparCampos()
+                    atualizarLista()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Erro ao guardar sala: ${e.message}", Toast.LENGTH_LONG).show()
+                }
         }
+    }
 
-        janela.listviewsalas.setOnItemClickListener { _, _, position, _ ->
-            val salaselecionada = ListaGlobal.listasalas[position]
-            val intent = Intent(this, SalasActivity::class.java)
-            intent.putExtra("nome_sala", salaselecionada.nome)
-            intent.putExtra("tipo_sala", salaselecionada.tipo)
-            intent.putExtra("codigo_sala", salaselecionada.codigo)
-            startActivity(intent)
+    override fun onResume() {
+        super.onResume()
+        atualizarLista()
+    }
 
-        }
+    private fun atualizarLista() {
+        linhas.clear()
+        linhas.addAll(
+            ListaGlobal.listasalas.map { "${it.codigo} - ${it.nome} - ${it.tipo} - ${it.quantidade}" }
+        )
+        adapter.notifyDataSetChanged()
+    }
 
+    private fun limparCampos() {
+        janela.campocodigosala.text.clear()
+        janela.camponomesala.text.clear()
+        janela.campocapacidadesala.text.clear()
+        janela.rbconsultorio.isChecked = false
+        janela.rbenfermaria.isChecked = false
     }
 }

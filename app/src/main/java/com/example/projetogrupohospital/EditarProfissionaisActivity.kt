@@ -18,19 +18,18 @@ class EditarProfissionaisActivity : AppCompatActivity() {
         janela = ActivityEditarProfissionaisBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        // Dentro do onCreate da EditarProfissionaisActivity.kt
         val codigoRecebido = intent.getStringExtra("CODIGO_EXTRA")
 
         // Busca o profissional na lista pelo código
         val profissional = ListaGlobal.listaprofissional.find { it.codigo == codigoRecebido }
 
         profissional?.let { p ->
-            // Preenche os campos do seu XML
+            // Preenche os campos do xml
             janela.profNome.text = p.nome
             janela.profNovoNome.setText(p.nome)
             janela.profCont.setText(p.contacto)
 
-            // Configura os Spinners (Turno e Cargo)
+            // Configura os Spinners
             val adapterT = ArrayAdapter(
                 this,
                 R.layout.simple_spinner_item,

@@ -19,7 +19,6 @@ class EditarPacienteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         janela= ActivityEditarPacienteBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
@@ -28,14 +27,12 @@ class EditarPacienteActivity : AppCompatActivity() {
         val paciente = ListaGlobal.listapacientes.find { it.id == codigoRecebido }
 
         paciente?.let { p ->
-            // Preenche os campos do seu XML
+            // Preenche os campos
             janela.pacNome.setText(p.nome)
             janela.pacData.setText(p.datanasc)
             janela.pacSexo.setText(p.sexo)
             janela.pacContato.setText(p.contato)
             janela.pacEndereco.setText(p.endereco)
-
-
 
             // Ação do botão Confirmar para salvar as alterações
             janela.btnEditarP.setOnClickListener {
@@ -49,9 +46,11 @@ class EditarPacienteActivity : AppCompatActivity() {
                 finish()
             }
         }
-                    janela.btnCancelar.setOnClickListener{
-                        finish()
-                    }
+
+        janela.btnCancelar.setOnClickListener{
+            finish()
+        }
 
         }
+
     }

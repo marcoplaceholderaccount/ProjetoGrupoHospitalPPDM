@@ -1,5 +1,12 @@
 package com.example.projetogrupohospital
 
-class Consultorio(codigo : String,nome : String,tipo : String,quantidade : Int) : Sala(codigo = codigo, nome = nome, tipo = tipo, quantidade = quantidade)
-{
-}
+class Consultorio(
+    codigo: String = "",
+    nome: String = "",
+    quantidade: Int = 0
+) : Sala(
+    codigo = codigo,
+    nome = nome,
+    tipo = "Consultorio",       // ✅ NOVO
+    quantidade = quantidade
+)

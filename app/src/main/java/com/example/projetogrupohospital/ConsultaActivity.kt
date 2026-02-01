@@ -5,115 +5,121 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.projetogrupohospital.databinding.ActivityConsultaBinding
 
 class ConsultaActivity : AppCompatActivity() {
+
     private lateinit var janela: ActivityConsultaBinding
+
+    private var pacienteSelecionado: Paciente? = null
+    private var medicoSelecionado: Profissional? = null
+    private var consultorioSelecionado: Sala? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         janela = ActivityConsultaBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        val adapterp = ArrayAdapter(
+        // --- LISTAS (filtragem por campo "tipo") ---
+        val pacientes = ListaGlobal.listapacientes
+        val medicos = listaMedicos()              // ✅ corrigido
+        val consultorios = listaConsultorio()     // ✅ corrigido
+
+        // --- ADAPTERS ---
+        janela.listviewpacientes.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            ListaGlobal.listapacientes.map { it.id + " - " + it.nome})
-        janela.listviewpacientes.adapter = adapterp
+            pacientes.map { "${it.id} - ${it.nome}" }
+        )
 
-        val adapterm = ArrayAdapter(
+        janela.listviewmedicos.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            listaMedicos().map { it.codigo + " - " + it.nome})
-        janela.listviewmedicos.adapter = adapterm
+            medicos.map { "${it.codigo} - ${it.nome}" }
+        )
 
-
-        val adapter = ArrayAdapter(
+        janela.listviewconsultorios.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            listaConsultorio().map { it.codigo + " - " + it.nome})
-        janela.listviewconsultorios.adapter = adapter
+            consultorios.map { "${it.codigo} - ${it.nome}" }
+        )
 
-        //AO CLICAR NA LISTVIEW  DE PACIENTES
-        lateinit var pacienteselecionado : Paciente
+        // --- SELECÇÃO PACIENTE ---
         janela.listviewpacientes.setOnItemClickListener { _, _, position, _ ->
-            pacienteselecionado = ListaGlobal.listapacientes[position]
-
-            janela.txtcodpaciente.text = pacienteselecionado.id.toString()
-            janela.txtnomepaciente.text = pacienteselecionado.nome
+            pacienteSelecionado = pacientes[position]
+            janela.txtcodpaciente.text = pacienteSelecionado!!.id
+            janela.txtnomepaciente.text = pacienteSelecionado!!.nome
         }
 
-        //AO CLICAR NA LISTVIEW DE MEDICOS
-        lateinit var medicoselecionado : Medico
+        // --- SELECÇÃO MÉDICO ---
         janela.listviewmedicos.setOnItemClickListener { _, _, position, _ ->
-            medicoselecionado = listaMedicos()[position]
-            janela.txtcodmedico.text = medicoselecionado.codigo
-            janela.txtnomemadico.text = medicoselecionado.nome
+            medicoSelecionado = medicos[position]
+            janela.txtcodmedico.text = medicoSelecionado!!.codigo
+            janela.txtnomemadico.text = medicoSelecionado!!.nome
         }
 
-        //AO CLICAR NA LISTVIEW DE CONSUTORIOS
-        lateinit var consultorioselecionado : Consultorio
+        // --- SELECÇÃO CONSULTÓRIO ---
         janela.listviewconsultorios.setOnItemClickListener { _, _, position, _ ->
-            consultorioselecionado = listaConsultorio()[position]
-            janela.txtcodconsultorio.text = consultorioselecionado.codigo
-            janela.txtnomeconsultorio.text = consultorioselecionado.nome
+            consultorioSelecionado = consultorios[position]
+            janela.txtcodconsultorio.text = consultorioSelecionado!!.codigo
+            janela.txtnomeconsultorio.text = consultorioSelecionado!!.nome
         }
 
+        // --- GUARDAR CONSULTA ---
         janela.botaorealizarconsulta.setOnClickListener {
-            var codigoc = janela.campocodigoconsulta.text.toString()
-            var datac = janela.campodataconsulta.text.toString()
 
-            val campos = listOf(codigoc,datac)
-            if(campos.any(){it.isBlank()}){
-                Toast.makeText(this@ConsultaActivity, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+            val codigoConsulta = janela.campocodigoconsulta.text.toString().trim()
+            val dataConsulta = janela.campodataconsulta.text.toString().trim()
+
+            if (codigoConsulta.isEmpty() || dataConsulta.isEmpty()) {
+                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val selecoes = listOf(pacienteselecionado, medicoselecionado, consultorioselecionado)
-            if(selecoes.any(){it == null }){
-                Toast.makeText(this@ConsultaActivity, "Selecione todos os membros das listas", Toast.LENGTH_SHORT).show()
+            if (pacienteSelecionado == null || medicoSelecionado == null || consultorioSelecionado == null) {
+                Toast.makeText(this, "Selecione paciente, médico e consultório.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            for(i in ListaGlobal.listaconsultas){
-                if(i.codigoconsulta == codigoc ){
-                    Toast.makeText(this@ConsultaActivity, "Já existe uma consulta com esse código!", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
+            if (ListaGlobal.listaconsultas.any { it.codigoconsulta == codigoConsulta }) {
+                Toast.makeText(this, "Já existe uma consulta com esse código!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val novaConsulta = Consulta(
+                codigoconsulta = codigoConsulta,
+                pacienteId = pacienteSelecionado!!.id,
+                medicoCodigo = medicoSelecionado!!.codigo,
+                consultorioCodigo = consultorioSelecionado!!.codigo,
+                data = dataConsulta
+            )
+
+            FirebaseManager.consultasRef()
+                .document(novaConsulta.codigoconsulta)
+                .set(novaConsulta)
+                .addOnSuccessListener {
+                    ListaGlobal.listaconsultas.add(novaConsulta)
+                    Toast.makeText(this, "Consulta marcada com sucesso", Toast.LENGTH_SHORT).show()
+                    finish()
                 }
-            }
-
-            var novaconsulta = Consulta(codigoc,
-                pacienteselecionado.nome,
-                medicoselecionado.nome,
-                consultorioselecionado.nome,
-                datac)
-            ListaGlobal.listaconsultas.add(novaconsulta)
-            Toast.makeText(this, "Consulta marcada com sucesso", Toast.LENGTH_SHORT).show()
-            finish()
-
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Erro a guardar consulta: ${e.message}", Toast.LENGTH_LONG).show()
+                }
         }
     }
 
-    fun listaMedicos() : MutableList<Medico>{
-        var lista : MutableList<Medico> = mutableListOf()
-        for (i in ListaGlobal.listaprofissional){
-            if(i is Medico){
-                lista.add(i)
-            }
+    // --- Filtra médicos por "tipo" dentro dos profissionais ---
+    fun listaMedicos(): List<Profissional> {
+        return ListaGlobal.listaprofissional.filter {
+            it.tipo.equals("Medico", true) || it.tipo.equals("Médico", true)
         }
-        return lista
     }
 
-    fun listaConsultorio() : MutableList<Consultorio>{
-        var lista : MutableList<Consultorio> = mutableListOf()
-        for (i in ListaGlobal.listasalas){
-            if(i is Consultorio){
-                lista.add(i)
-            }
+    // --- Filtra consultórios por "tipo" dentro das salas ---
+    fun listaConsultorio(): List<Sala> {
+        return ListaGlobal.listasalas.filter {
+            it.tipo.equals("Consultorio", true) || it.tipo.equals("Consultório", true)
         }
-        return lista
     }
-
 }

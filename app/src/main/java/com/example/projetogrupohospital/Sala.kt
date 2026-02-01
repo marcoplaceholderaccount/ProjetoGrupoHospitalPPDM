@@ -1,13 +1,12 @@
 package com.example.projetogrupohospital
 
-open abstract class Sala(
-    val codigo : String,
-    var nome : String,
-    var tipo : String,
-    var quantidade : Int
+open class Sala(
+    var codigo: String = "",
+    var nome: String = "",
+    var tipo: String = "",
+    var quantidade: Int = 0
 ) {
-
     override fun toString(): String {
-        return "Codigo: $codigo Nome: $nome"
+        return "$codigo - $nome"
     }
 }

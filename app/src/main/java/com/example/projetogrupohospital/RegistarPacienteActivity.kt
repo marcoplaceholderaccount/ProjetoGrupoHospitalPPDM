@@ -22,7 +22,7 @@ class RegistarPacienteActivity : AppCompatActivity() {
         janela.btnCancelar.setOnClickListener{
             finish()
         }
-
+        //leitura dos dados inseridos
         janela.btnRegistar.setOnClickListener {
             val nome = janela.pacNome.text.toString().trim()
             val id = janela.pacID.text.toString().trim()
@@ -40,6 +40,10 @@ class RegistarPacienteActivity : AppCompatActivity() {
 
                 val paciente = Paciente(nome,id,data, contato, sexo,endereco)
                 ListaGlobal.listapacientes.add(paciente)
+                // Salva no Firebase
+                FirebaseManager.pacientesRef()
+                    .document(paciente.id)
+                    .set(paciente)
                 Toast.makeText(this,"Adicionado com sucesso",Toast.LENGTH_SHORT).show()
 
                 finish()

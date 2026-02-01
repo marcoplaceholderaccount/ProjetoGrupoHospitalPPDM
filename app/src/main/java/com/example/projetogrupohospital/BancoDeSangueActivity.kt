@@ -18,9 +18,9 @@ class BancoDeSangueActivity : AppCompatActivity() {
         janela = ActivityBancoDeSangueBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        // ===============================
+
         // BOTÕES DE NAVEGAÇÃO
-        // ===============================
+
         janela.botaodoadoresdipo.setOnClickListener {
             startActivity(Intent(this, DoadoresDisponiveisActivity::class.java))
         }
@@ -33,9 +33,9 @@ class BancoDeSangueActivity : AppCompatActivity() {
             startActivity(Intent(this, DoacaoActivity::class.java))
         }
 
-        // ===============================
+
         // BOTÃO UTILIZAR SANGUE
-        // ===============================
+
         janela.botaoutilizarsangue.setOnClickListener {
 
             val texto = janela.campoquantidadeutilizado.text.toString()
@@ -69,7 +69,7 @@ class BancoDeSangueActivity : AppCompatActivity() {
         }
     }
 
-    // atualiza total ao voltar a tela
+    // atualizar total ao voltar a tela
     override fun onResume() {
         super.onResume()
         atualizarTotal()
@@ -87,9 +87,8 @@ class BancoDeSangueActivity : AppCompatActivity() {
         atualizarEstadoBanco(total)
     }
 
-    // ===============================
     // ESTADO DO BANCO
-    // ===============================
+
     private fun atualizarEstadoBanco(total: Double) {
         if (total < 1000.0) {
             janela.txtestadobanco.text = "CRITICO"

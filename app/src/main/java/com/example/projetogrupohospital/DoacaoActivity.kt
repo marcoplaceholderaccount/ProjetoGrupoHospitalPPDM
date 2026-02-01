@@ -88,6 +88,10 @@ class DoacaoActivity : AppCompatActivity() {
                 )
 
                 ListaGlobal.listadoacoes.add(novadoacao)
+                // Salva no Firebase
+                FirebaseManager.doacoesRef()
+                    .document(novadoacao.codigodoacao)
+                    .set(novadoacao)
                 Toast.makeText(
                     this@DoacaoActivity,
                     "Doação realizada com sucesso !",
