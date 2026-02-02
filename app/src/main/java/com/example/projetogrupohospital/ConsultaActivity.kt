@@ -23,8 +23,8 @@ class ConsultaActivity : AppCompatActivity() {
 
         // --- LISTAS (filtragem por campo "tipo") ---
         val pacientes = ListaGlobal.listapacientes
-        val medicos = listaMedicos()              // ✅ corrigido
-        val consultorios = listaConsultorio()     // ✅ corrigido
+        val medicos = listaMedicos()
+        val consultorios = listaConsultorio()
 
         // --- ADAPTERS ---
         janela.listviewpacientes.adapter = ArrayAdapter(

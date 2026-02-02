@@ -51,12 +51,12 @@ class GestaoSalaActivity : AppCompatActivity() {
 
             val sala: Sala = when {
                 janela.rbconsultorio.isChecked -> {
-                    // ✅ métodos 1: Consultorio define tipo sozinho
+                    //Consultorio define tipo sozinho
                     Consultorio(codigosala, nomesala, capacidade)
                 }
 
                 janela.rbenfermaria.isChecked -> {
-                    // Enfermaria mantém tipo como vem do rádio
+                    // Enfermaria mantém tipo como vem do radio button
                     Enfermaria(codigosala, nomesala, "Enfermaria", capacidade)
                 }
 

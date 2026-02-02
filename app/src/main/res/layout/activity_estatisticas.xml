@@ -236,34 +236,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal">
-
-        <TextView
-
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quantidade de Sangue Disponível :"
-            android:textStyle="bold"
-            android:textSize="18sp">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/TotalQSD"
-            android:layout_marginLeft="5dp"
-            android:layout_width="50dp"
-            android:layout_height="19dp"
-      >
-
-        </TextView>
-
-    </LinearLayout>
-
 
 
 </LinearLayout>

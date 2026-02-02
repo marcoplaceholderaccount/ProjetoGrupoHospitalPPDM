@@ -18,14 +18,11 @@ class TelaGestaoPacienteActivity : AppCompatActivity() {
         janela= ActivityTelaGestaoPacienteBinding.inflate(layoutInflater)
         setContentView(janela.root)
 
-        val botao1= janela.btnRegistarP
-        botao1.setOnClickListener{
 
+        janela.btnRegistarP.setOnClickListener{
             val intent= Intent(this, RegistarPacienteActivity::class.java)
             startActivity(intent)
         }
-
-
 
          janela.btnListarP.setOnClickListener{
             val intent= Intent(this, ListarPacienteActivity:: class.java)

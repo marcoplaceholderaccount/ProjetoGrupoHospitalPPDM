@@ -23,8 +23,4 @@ class Enfermaria(
 
     fun temVaga(): Boolean = ocupacaoActual() < quantidade
 
-    // Utilitários simples que actuam sobre ListaGlobal (opcional)
-    fun darAltaPorCodigo(codigoIntern: String) {
-        ListaGlobal.listainternamentostotal.find { it.codigo == codigoIntern }?.estado = false
-    }
 }

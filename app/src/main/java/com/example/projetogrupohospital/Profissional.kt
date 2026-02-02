@@ -5,7 +5,7 @@ open class Profissional(
     var nome: String = "",
     var contacto: String = "",
     var turno: String = "",
-    var tipo: String = ""      // ✅ NOVO
+    var tipo: String = ""
 ) {
     override fun toString(): String {
         return "$codigo - $nome"

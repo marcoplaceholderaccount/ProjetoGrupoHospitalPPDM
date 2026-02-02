@@ -10,5 +10,5 @@ class Medico(
     nome = nome,
     contacto = contacto,
     turno = turno,
-    tipo = "Medico"            // ✅ NOVO
+    tipo = "Medico"
 )

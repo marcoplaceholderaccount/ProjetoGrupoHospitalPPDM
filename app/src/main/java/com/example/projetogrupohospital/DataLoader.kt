@@ -26,7 +26,7 @@ object DataLoader {
         // Carrega colecções que não têm dependência
         carregarDoacoes { taskDone() }
         carregarDoadores { taskDone() }
-        carregarPacientes { taskDone() } // pacientes antes de salas não é obrigatório, mas carregamos
+        carregarPacientes { taskDone() }
         carregarConsultas { taskDone() }
         carregarProfissionais { taskDone() }
 

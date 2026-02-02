@@ -119,13 +119,7 @@ class GestaoInternamentoActivity : AppCompatActivity() {
                 }
         }
 
-        // Opcional: se quiseres manter um campo na sala com array de ids, descomenta:
-        /*
-        val salaRef = FirebaseManager.salasRef().document(enf.codigo)
-        salaRef.update("listainternamentos", FieldValue.arrayUnion(intern.codigo))
-            .addOnSuccessListener { Log.d("GestaoIntern", "Sala actualizada") }
-            .addOnFailureListener { Log.e("GestaoIntern", "Erro a actualizar sala", it) }
-        */
+
     }
 
     private fun processarAlta(intern: Internamento) {
@@ -176,8 +170,6 @@ class GestaoInternamentoActivity : AppCompatActivity() {
         val enf = janela.spinQuar.selectedItem as? Enfermaria ?: return
         val ativos = enf.getInternamentosAtivos()
         adapterInternamento.atualizar(ativos)
-        // podes actualizar contadores UI aqui, por exemplo:
-        //janela.txtOcupacao.text = "${enf.ocupacaoActual()} / ${enf.quantidade}"
     }
 
     private fun limparCampos() {
